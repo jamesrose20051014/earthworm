@@ -14,7 +14,7 @@
               :coursePack="{
                 id: coursePack.id,
                 title: coursePack.title,
-                description: coursePack.description,
+                description: coursePack.zh,
                 cover: coursePack.cover,
                 isFree: coursePack.isFree,
               }"
