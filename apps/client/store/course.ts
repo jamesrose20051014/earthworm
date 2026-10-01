@@ -10,7 +10,49 @@ import { useStatement } from "./statement";
 
 export const useCourseStore = defineStore("course", () => {
   const currentCourse = ref<Course>();
-  const currentStatement = ref<Statement>();
+  const currentStatement = ref<Statement>([
+  {
+    "zh": "現代科技改變了人們的社交方式。",
+    "en": "Modern technology has changed the way people socialize."
+  },
+  {
+    "zh": "教育可以幫助年輕人獲得更好的工作機會。",
+    "en": "Education can help young people get better job opportunities."
+  },
+  {
+    "zh": "政府應該投入更多資金保護環境。",
+    "en": "Governments should spend more money on environmental protection."
+  },
+  {
+    "zh": "線上學習讓知識更容易取得。",
+    "en": "Online learning makes knowledge more accessible."
+  },
+  {
+    "zh": "運動有助於減輕日常生活的壓力。",
+    "en": "Doing exercise helps reduce stress in daily life."
+  },
+  {
+    "zh": "城市裡的空氣污染是一個嚴重的問題。",
+    "en": "Air pollution in cities is a serious problem."
+  },
+  {
+    "zh": "閱讀書籍可以拓展我們的視野。",
+    "en": "Reading books can broaden our horizons."
+  },
+  {
+    "zh": "旅遊能讓人認識不同的文化。",
+    "en": "Travelling allows people to learn about different cultures."
+  },
+  {
+    "zh": "人們過度依賴手機會影響人際關係。",
+    "en": "Over-reliance on mobile phones affects interpersonal relationships."
+  },
+  {
+    "zh": "均衡飲食對維持身體健康十分重要。",
+    "en": "A balanced diet is very important for maintaining good health."
+  }
+]
+);
   const { statementIndex, setupAutoSaveProgress } = useStatement();
   const masteredElementsStore = useMasteredElementsStore();
 
@@ -21,7 +63,7 @@ export const useCourseStore = defineStore("course", () => {
   });
 
   const words = computed(() => {
-    return currentStatement.value?.english.split(" ") || [];
+    return currentStatement.value?.zh.split(" ") || [];
   });
 
   const visibleStatementsCount = computed(
